@@ -30,8 +30,12 @@ function shareText(text) {
     share([text]);
 }
 exports.shareText = shareText;
-function shareUrl(url, text) {
-    share([NSURL.URLWithString(url), text]);
+function shareUrl(url, text) {    
+    const thingsToShare = [NSURL.URLWithString(url)];
+    if (text !== undefined) {
+        thingsToShare.push(text);
+    }
+    share(thingsToShare);
 }
 exports.shareUrl = shareUrl;
 //# sourceMappingURL=social-share.ios.js.map

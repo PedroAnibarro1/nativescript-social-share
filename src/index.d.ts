@@ -20,4 +20,4 @@ export function shareText(text: string, subject?: string);
  * @param {string} text - Text to share with URL.
  * @param {string} [subject] - The subject of the share *** ANDROID ONLY ***
  */
-export function shareUrl(url: string, text: string, subject?: string);
+export function shareUrl(url: string, text?: string, subject?: string);

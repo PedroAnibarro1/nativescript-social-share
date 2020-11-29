@@ -63,9 +63,11 @@ export function shareText(text, subject) {
 
 export function shareUrl(url, text, subject) {
   const intent = getIntent("text/plain");
-
+  
   intent.putExtra(android.content.Intent.EXTRA_TEXT, url);
-  intent.putExtra(android.content.Intent.EXTRA_SUBJECT, text);
+  if (text !== undefined) {
+    intent.putExtra(android.content.Intent.EXTRA_SUBJECT, text);
+  }
 
   share(intent, subject);
 }
